@@ -15,33 +15,48 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     // return const Placeholder();
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false, // Removes the back arrow
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            Text(
-              'Profile',
-              style: TextStyle(
-                color: Colors.black,
-                fontFamily: 'K2D',
-                fontSize: 25.0,
-                fontWeight: FontWeight.bold,
+      appBar: PreferredSize(
+        preferredSize:
+            Size.fromHeight(kToolbarHeight), // Set height to match AppBar
+        child: Container(
+          decoration: BoxDecoration(
+            border: Border(
+              bottom: BorderSide(
+                color: const Color.fromRGBO(
+                    117, 8, 23, 1), // Set the color of the bottom border
+                width: 2.0, // Set the width of the bottom border
               ),
             ),
-            SizedBox(
-              width: 75,
+          ),
+          child: AppBar(
+            automaticallyImplyLeading: false, // Removes the back arrow
+            title: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Text(
+                  'Profile',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontFamily: 'K2D',
+                    fontSize: 25.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(
+                  width: 75,
+                ),
+                IconButton(
+                  icon: Icon(Icons.shopping_cart,
+                      color: Color(0xFF333333)), // Set icon color
+                  onPressed: () {
+                    // Action when the cart icon is pressed
+                  },
+                ),
+              ],
             ),
-            IconButton(
-              icon: Icon(Icons.shopping_cart,
-                  color: Color(0xFF333333)), // Set icon color
-              onPressed: () {
-                // Action when the cart icon is pressed
-              },
-            ),
-          ],
+            backgroundColor: Color(0xFFE8E8E8),
+          ),
         ),
-        backgroundColor: Color(0xFFE8E8E8),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
