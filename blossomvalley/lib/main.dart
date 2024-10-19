@@ -1,11 +1,7 @@
 import 'package:blossomvalley/screens/SplashScreen.dart';
 import 'package:flutter/material.dart';
-// import 'package:flutter_stripe/flutter_stripe.dart';
-// import 'dart:async';
 
-void main() {
-  runApp(BlossomValleyApp());
-}
+void main() => runApp(BlossomValleyApp());
 
 class BlossomValleyApp extends StatelessWidget {
   @override
