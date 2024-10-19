@@ -34,11 +34,19 @@ class _HomepageState extends State<Homepage> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
-            child: Text("data"),
+            padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5),
+            child: Text(
+              "New Arrivals",
+              style: TextStyle(
+                color: const Color.fromRGBO(117, 8, 23, 1),
+                fontFamily: 'K2D',
+                fontSize: 22,
+              ),
+            ),
           ),
         ],
       ),
+      backgroundColor: Colors.white,
     );
   }
 }

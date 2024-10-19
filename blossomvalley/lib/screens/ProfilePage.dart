@@ -113,6 +113,7 @@ class _ProfilePageState extends State<ProfilePage> {
           ],
         ),
       ),
+      backgroundColor: Colors.white,
     );
   }
 }
