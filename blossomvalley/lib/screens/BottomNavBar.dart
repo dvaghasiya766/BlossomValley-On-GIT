@@ -1,6 +1,6 @@
+import 'package:blossomvalley/screens/CategoriesPage.dart';
 import 'package:blossomvalley/screens/FavoritesPage.dart';
 import 'package:blossomvalley/screens/HomePage.dart';
-import 'package:blossomvalley/screens/CategoriesPage.dart';
 import 'package:blossomvalley/screens/ProfilePage.dart';
 import 'package:flutter/material.dart';
 
@@ -16,8 +16,7 @@ class _BottomnavbarState extends State<Bottomnavbar> {
 
   // Add CategoriesPage to the list of pages
   final List<Widget> _pages = [
-    // PlantListPage(), // Home page
-    Homepage(),
+    Homepage(), // Homepage
     CategoriesPage(), // Categories page
     FavoritesPage(), // Favorites page
     ProfilePage(), // Profile page

@@ -1,4 +1,3 @@
-// Sign up page
 import 'package:blossomvalley/screens/LoginPage.dart';
 import 'package:flutter/material.dart';
 

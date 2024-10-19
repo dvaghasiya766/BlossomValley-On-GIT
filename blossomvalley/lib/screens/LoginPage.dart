@@ -67,7 +67,7 @@ class LoginPage extends StatelessWidget {
                         MaterialPageRoute(
                             builder: (context) => Bottomnavbar()));
                   },
-                  child: Text('Login'),
+                  child: Text('Login Now'),
                   style: ElevatedButton.styleFrom(
                     foregroundColor: Colors.white,
                     backgroundColor: Color(0xFF750817), // #750817

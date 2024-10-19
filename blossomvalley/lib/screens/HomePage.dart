@@ -14,23 +14,19 @@ class _HomepageState extends State<Homepage> {
       appBar: AppBar(
         automaticallyImplyLeading: false, // Removes the back arrow
         title: Row(
-          mainAxisAlignment: MainAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          // crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Text(
-            //   'Dashboard',
-            //   style: TextStyle(
-            //     color: Colors.black,
-            //     fontFamily: 'K2D',
-            //     fontSize: 25.0,
-            //     fontWeight: FontWeight.bold,
-            //   ),
-            // ),
-            Image(
-              image: AssetImage('assets/images/Blossom Valley_avatar (1).png'),
-              height: 60,
+            IconButton(
+              icon: Icon(Icons.shopping_cart,
+                  color: Color(0xFF333333)), // Set icon color
+              onPressed: () {
+                // Action when the cart icon is pressed
+              },
             ),
-            SizedBox(
-              width: 50,
+            Image(
+              image: AssetImage('assets/images/Blossom Valley (1).png'),
+              height: 170,
             ),
             IconButton(
               icon: Icon(Icons.shopping_cart,
