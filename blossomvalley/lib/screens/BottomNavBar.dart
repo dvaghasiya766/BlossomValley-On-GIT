@@ -1,3 +1,4 @@
+import 'package:blossomvalley/screens/CartPage.dart';
 import 'package:blossomvalley/screens/CategoriesPage.dart';
 import 'package:blossomvalley/screens/FavoritesPage.dart';
 import 'package:blossomvalley/screens/HomePage.dart';
@@ -32,6 +33,38 @@ class _BottomnavbarState extends State<Bottomnavbar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false, // Removes the back arrow
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            IconButton(
+              icon: Icon(Icons.safety_check,
+                  color: Color(0xFF333333)), // Set icon color
+              onPressed: () {
+                // Action when the icon is pressed
+              },
+            ),
+            Image(
+              image: AssetImage('assets/images/Blossom Valley (1).png'),
+              height: 170,
+            ),
+            IconButton(
+              icon: Icon(Icons.shopping_cart,
+                  color: Color(0xFF333333)), // Set icon color
+              onPressed: () {
+                // Navigate to CartPage
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => Cartpage(),
+                  ),
+                );
+              },
+            ),
+          ],
+        ),
+        backgroundColor: Color(0xFFE8E8E8),
+      ),
       body: _pages[_selectedIndex], // Show the corresponding page
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
@@ -55,7 +88,8 @@ class _BottomnavbarState extends State<Bottomnavbar> {
         currentIndex: _selectedIndex,
         selectedItemColor: const Color.fromRGBO(117, 8, 23, 1),
         unselectedItemColor: const Color(0xFF8C9B7E),
-        backgroundColor: Color(0xFFE8E8E8),
+        // backgroundColor: Color(0xFFE8E8E8),
+        backgroundColor: Colors.blue, // Change to any valid color
         onTap: _onItemTapped,
       ),
     );

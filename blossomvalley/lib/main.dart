@@ -9,7 +9,7 @@ class BlossomValleyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Blossom Valley',
       theme: ThemeData(
-        primaryColor: Color.fromRGBO(117, 8, 23, 1),
+        primaryColor: const Color.fromRGBO(117, 8, 23, 1),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: SplashScreen(),
