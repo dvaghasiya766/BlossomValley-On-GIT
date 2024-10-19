@@ -23,10 +23,13 @@ class _CategoriesPageState extends State<CategoriesPage> {
                 'Workshops', '80+ Varieties', 'assets/images/workshop.jpeg'),
             SizedBox(height: 5),
             _buildCategoryItem(
-                'Furtilizer', '50+ Varieties', 'assets/images/furtilizer.jpeg'),
+                'Fertilizer', '50+ Varieties', 'assets/images/furtilizer.jpeg'),
+            SizedBox(height: 5),
+            _buildCategoryItem('Decoration', '200+ Varieties',
+                'assets/images/decoration.jpeg'),
             SizedBox(height: 5),
             _buildCategoryItem(
-                'More', '200+ Varieties', 'assets/images/more.jpeg'),
+                'More', '5+ Varieties', 'assets/images/more.jpeg'),
           ],
         ),
       ),
@@ -37,7 +40,7 @@ class _CategoriesPageState extends State<CategoriesPage> {
   Widget _buildCategoryItem(
       String category, String variety, String imgaddress) {
     return Card(
-      elevation: 1, // Shadow effect
+      elevation: 3, // Shadow effect
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(5), // Rounded corners
       ),
