@@ -1,4 +1,3 @@
-import 'package:blossomvalley/screens/CartPage.dart';
 import 'package:flutter/material.dart';
 
 class Homepage extends StatefulWidget {
