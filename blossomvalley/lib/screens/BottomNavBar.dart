@@ -32,6 +32,9 @@ class _BottomnavbarState extends State<Bottomnavbar> {
 
   @override
   Widget build(BuildContext context) {
+    // Define a common color for AppBar and BottomNavigationBar
+    Color appBarColor = Color(0xFFE8E8E8); // Change this to your desired color
+
     return Scaffold(
       appBar: PreferredSize(
         preferredSize:
@@ -40,9 +43,9 @@ class _BottomnavbarState extends State<Bottomnavbar> {
           decoration: BoxDecoration(
             border: Border(
               bottom: BorderSide(
-                color: const Color.fromRGBO(
-                    117, 8, 23, 1), // Set the color of the bottom border
-                width: 2.0, // Set the width of the bottom border
+                color:
+                    const Color.fromRGBO(117, 8, 23, 1), // Bottom border color
+                width: 2.0, // Width of the bottom border
               ),
             ),
           ),
@@ -76,7 +79,7 @@ class _BottomnavbarState extends State<Bottomnavbar> {
                 ),
               ],
             ),
-            backgroundColor: Color(0xFFE8E8E8),
+            backgroundColor: appBarColor, // Set AppBar background color
           ),
         ),
       ),
@@ -103,8 +106,7 @@ class _BottomnavbarState extends State<Bottomnavbar> {
         currentIndex: _selectedIndex,
         selectedItemColor: const Color.fromRGBO(117, 8, 23, 1),
         unselectedItemColor: const Color(0xFF8C9B7E),
-        // backgroundColor: Color(0xFFE8E8E8),
-        backgroundColor: Colors.blue, // Change to any valid color
+        backgroundColor: appBarColor,
         onTap: _onItemTapped,
       ),
     );

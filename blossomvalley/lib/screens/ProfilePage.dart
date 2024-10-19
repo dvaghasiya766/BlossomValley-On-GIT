@@ -1,4 +1,5 @@
 import 'package:blossomvalley/screens/CategoriesPage.dart';
+import 'package:blossomvalley/screens/FavoritesPage.dart';
 import 'package:blossomvalley/screens/HomePage.dart';
 import 'package:blossomvalley/screens/LandingPage.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +14,6 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
-    // return const Placeholder();
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -36,14 +36,18 @@ class _ProfilePageState extends State<ProfilePage> {
                       style: TextStyle(
                         fontSize: 18.0,
                         fontWeight: FontWeight.bold,
+                        color: Colors.black,
                       ),
                     ),
-                    Text('blossomvcustomer@gmail.com'),
+                    Text(
+                      'blossomvcustomer@gmail.com',
+                      style: TextStyle(color: Colors.grey),
+                    ),
                   ],
                 ),
                 Spacer(),
                 IconButton(
-                  icon: Icon(Icons.edit),
+                  icon: Icon(Icons.edit), // Set color
                   onPressed: () {
                     // Edit profile action
                   },
@@ -51,69 +55,66 @@ class _ProfilePageState extends State<ProfilePage> {
               ],
             ),
             SizedBox(height: 20.0),
-            ListTile(
-              leading: Icon(Icons.receipt),
-              title: Text('My Orders'),
-              onTap: () {
-                // Navigate to OrderListPage
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => CategoriesPage(),
-                  ),
-                );
-              },
-            ),
-            Divider(),
-            ListTile(
-              leading: Icon(Icons.favorite),
-              title: Text('My Favorites'),
-              onTap: () {
-                // Navigate to FavoritesPage
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => CategoriesPage(),
-                  ),
-                );
-              },
-            ),
-            Divider(),
-            ListTile(
-              leading: Icon(Icons.home),
-              title: Text('Address Book'),
-              onTap: () {
-                // Navigate to AddressBookPage
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => Homepage(),
-                  ),
-                );
-              },
-            ),
-            Divider(),
-            ListTile(
-              leading: Icon(Icons.credit_card),
-              title: Text('Payment Method'),
-              onTap: () {
-                // Navigate to Payment Method page (if implemented)
-              },
-            ),
-            Divider(),
-            ListTile(
-              leading: Icon(Icons.logout),
-              title: Text('Logout'),
-              onTap: () {
-                // Navigate to OrderListPage
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => LandingPage(),
-                  ),
-                );
-              },
+            Expanded(
+              child: ListView(
+                children: [
+                  _buildListTile(
+                      Icons.import_contacts_rounded, '100 Eco Points', () {
+                    // Navigate to Payment Method page (if implemented)
+                  }),
+                  _buildListTile(Icons.receipt, 'My Orders', () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => CategoriesPage(),
+                      ),
+                    );
+                  }),
+                  _buildListTile(Icons.favorite, 'My Favorites', () {
+                    // Navigate to FavoritesPage
+                    // Implement this page and uncomment below line
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => FavoritesPage(),
+                      ),
+                    );
+                  }),
+                  _buildListTile(Icons.home, 'Address Book', () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => Homepage(),
+                      ),
+                    );
+                  }),
+                  _buildListTile(Icons.credit_card, 'Payment Method', () {
+                    // Navigate to Payment Method page (if implemented)
+                  }),
+                  _buildListTile(Icons.logout, 'Logout', () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => LandingPage(),
+                      ),
+                    );
+                  }),
+                ],
+              ),
             ),
           ],
         ),
       ),
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.white, // Change the background color here
+    );
+  }
+
+  Widget _buildListTile(IconData icon, String title, VoidCallback onTap) {
+    return Column(
+      children: [
+        ListTile(
+          leading: Icon(icon), // Set icon color
+          title: Text(title),
+          onTap: onTap,
+        ),
+        Divider(),
+      ],
     );
   }
 }
