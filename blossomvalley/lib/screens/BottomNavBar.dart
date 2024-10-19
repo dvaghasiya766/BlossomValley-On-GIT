@@ -33,37 +33,52 @@ class _BottomnavbarState extends State<Bottomnavbar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false, // Removes the back arrow
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            IconButton(
-              icon: Icon(Icons.safety_check,
-                  color: Color(0xFF333333)), // Set icon color
-              onPressed: () {
-                // Action when the icon is pressed
-              },
+      appBar: PreferredSize(
+        preferredSize:
+            Size.fromHeight(kToolbarHeight), // Set height to match AppBar
+        child: Container(
+          decoration: BoxDecoration(
+            border: Border(
+              bottom: BorderSide(
+                color: const Color.fromRGBO(
+                    117, 8, 23, 1), // Set the color of the bottom border
+                width: 2.0, // Set the width of the bottom border
+              ),
             ),
-            Image(
-              image: AssetImage('assets/images/Blossom Valley (1).png'),
-              height: 170,
+          ),
+          child: AppBar(
+            automaticallyImplyLeading: false, // Removes the back arrow
+            title: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                IconButton(
+                  icon: Icon(Icons.safety_check,
+                      color: Color(0xFF333333)), // Set icon color
+                  onPressed: () {
+                    // Action when the icon is pressed
+                  },
+                ),
+                Image(
+                  image: AssetImage('assets/images/Blossom Valley (1).png'),
+                  height: 170,
+                ),
+                IconButton(
+                  icon: Icon(Icons.shopping_cart,
+                      color: Color(0xFF333333)), // Set icon color
+                  onPressed: () {
+                    // Navigate to CartPage
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => Cartpage(),
+                      ),
+                    );
+                  },
+                ),
+              ],
             ),
-            IconButton(
-              icon: Icon(Icons.shopping_cart,
-                  color: Color(0xFF333333)), // Set icon color
-              onPressed: () {
-                // Navigate to CartPage
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => Cartpage(),
-                  ),
-                );
-              },
-            ),
-          ],
+            backgroundColor: Color(0xFFE8E8E8),
+          ),
         ),
-        backgroundColor: Color(0xFFE8E8E8),
       ),
       body: _pages[_selectedIndex], // Show the corresponding page
       bottomNavigationBar: BottomNavigationBar(

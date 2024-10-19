@@ -25,11 +25,6 @@ class _HomepageState extends State<Homepage> {
                     .cover, // Make sure the image covers the entire container
               ),
               border: Border(
-                top: BorderSide(
-                  color: const Color.fromRGBO(
-                      117, 8, 23, 1), // Set the color of the top border
-                  width: 2.0, // Set the width of the top border
-                ),
                 bottom: BorderSide(
                   color: const Color.fromRGBO(
                       117, 8, 23, 1), // Set the color of the bottom border
