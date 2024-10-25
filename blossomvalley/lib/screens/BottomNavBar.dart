@@ -2,6 +2,7 @@ import 'package:blossomvalley/screens/CartPage.dart';
 import 'package:blossomvalley/screens/CategoriesPage.dart';
 import 'package:blossomvalley/screens/FavoritesPage.dart';
 import 'package:blossomvalley/screens/HomePage.dart';
+import 'package:blossomvalley/screens/LandingPage.dart';
 import 'package:blossomvalley/screens/ProfilePage.dart';
 import 'package:flutter/material.dart';
 import 'package:global_bottom_navigation_bar/global_bottom_navigation_bar.dart';
@@ -39,10 +40,15 @@ class _BottomnavbarState extends State<Bottomnavbar>
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 IconButton(
-                  icon: Icon(Icons.safety_check,
+                  icon: Icon(Icons.logout,
                       color: Color(0xFF333333)), // Set icon color
                   onPressed: () {
                     // Action when the icon is pressed
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => LandingPage(),
+                      ),
+                    );
                   },
                 ),
                 Image(
@@ -141,4 +147,3 @@ class _BottomnavbarState extends State<Bottomnavbar>
         ),
       ];
 }
-//flutter pub publish --dry-run

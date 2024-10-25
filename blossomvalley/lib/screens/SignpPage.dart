@@ -5,10 +5,10 @@ class SignupPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: Text('Sign Up'),
-      //   backgroundColor: Color(0xFF750817), // #750817
-      // ),
+      appBar: AppBar(
+        automaticallyImplyLeading: false, // Removes the back arrow
+        backgroundColor: Color.fromARGB(255, 245, 255, 250),
+      ),
       body: Container(
         child: Padding(
           padding: const EdgeInsets.all(16.0),

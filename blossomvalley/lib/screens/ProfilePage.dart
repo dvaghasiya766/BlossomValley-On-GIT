@@ -58,8 +58,7 @@ class _ProfilePageState extends State<ProfilePage> {
             Expanded(
               child: ListView(
                 children: [
-                  _buildListTile(
-                      Icons.import_contacts_rounded, '100 Eco Points', () {
+                  _buildListTile(Icons.eco, '100 Eco Points', () {
                     // Navigate to Payment Method page (if implemented)
                   }),
                   _buildListTile(Icons.receipt, 'My Orders', () {
@@ -88,13 +87,6 @@ class _ProfilePageState extends State<ProfilePage> {
                   _buildListTile(Icons.credit_card, 'Payment Method', () {
                     // Navigate to Payment Method page (if implemented)
                   }),
-                  _buildListTile(Icons.logout, 'Logout', () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => LandingPage(),
-                      ),
-                    );
-                  }),
                 ],
               ),
             ),
@@ -109,7 +101,11 @@ class _ProfilePageState extends State<ProfilePage> {
     return Column(
       children: [
         ListTile(
-          leading: Icon(icon), // Set icon color
+          leading: Icon(
+            icon,
+            color: const Color.fromRGBO(117, 8, 23, 1),
+            size: 30,
+          ), // Set icon color
           title: Text(title),
           onTap: onTap,
         ),

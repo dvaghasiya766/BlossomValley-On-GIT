@@ -1,5 +1,5 @@
 import 'package:blossomvalley/screens/LoginPage.dart';
-import 'package:blossomvalley/screens/SignupPage.dart';
+import 'package:blossomvalley/screens/SignpPage.dart';
 import 'package:flutter/material.dart';
 
 // Landing Page

@@ -1,5 +1,5 @@
 import 'package:blossomvalley/screens/BottomNavBar.dart';
-import 'package:blossomvalley/screens/SignupPage.dart';
+import 'package:blossomvalley/screens/SignpPage.dart';
 import 'package:flutter/material.dart';
 
 // Login page
@@ -7,10 +7,10 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: Text('Login'),
-      //   backgroundColor: Color(0xFF750817), // #750817
-      // ),
+      appBar: AppBar(
+        automaticallyImplyLeading: false, // Removes the back arrow
+        backgroundColor: Color.fromARGB(255, 245, 255, 250),
+      ),
       body: Container(
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),

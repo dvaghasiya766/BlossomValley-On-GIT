@@ -44,8 +44,8 @@ class _CategoriesPageState extends State<CategoriesPage> {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(5), // Rounded corners
       ),
-      color:
-          const Color(0xFFE8E8E8), // Set the background color of the card here
+      color: const Color.fromARGB(
+          255, 245, 245, 245), // Set the background color of the card here
       child: Row(
         children: [
           Container(
