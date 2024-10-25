@@ -4,38 +4,22 @@ import 'package:blossomvalley/screens/FavoritesPage.dart';
 import 'package:blossomvalley/screens/HomePage.dart';
 import 'package:blossomvalley/screens/ProfilePage.dart';
 import 'package:flutter/material.dart';
+import 'package:global_bottom_navigation_bar/global_bottom_navigation_bar.dart';
 
 class Bottomnavbar extends StatefulWidget {
-  const Bottomnavbar({super.key});
+  Bottomnavbar({Key? key, this.title}) : super(key: key);
+  final String? title;
 
   @override
-  State<Bottomnavbar> createState() => _BottomnavbarState();
+  _BottomnavbarState createState() => _BottomnavbarState();
 }
 
-class _BottomnavbarState extends State<Bottomnavbar> {
-  int _selectedIndex = 0;
-
-  // Add CategoriesPage to the list of pages
-  final List<Widget> _pages = [
-    Homepage(), // Homepage
-    CategoriesPage(), // Categories page
-    FavoritesPage(), // Favorites page
-    ProfilePage(), // Profile page
-  ];
-
-  // Handle bottom navigation item tap
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
-
+class _BottomnavbarState extends State<Bottomnavbar>
+    with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
-    // Define a common color for AppBar and BottomNavigationBar
     Color appBarColor = Color(0xFFE8E8E8); // Change this to your desired color
-
-    return Scaffold(
+    return ScaffoldGlobalBottomNavigation(
       appBar: PreferredSize(
         preferredSize:
             Size.fromHeight(kToolbarHeight), // Set height to match AppBar
@@ -83,32 +67,78 @@ class _BottomnavbarState extends State<Bottomnavbar> {
           ),
         ),
       ),
-      body: _pages[_selectedIndex], // Show the corresponding page
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.category),
-            label: 'Categories',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.favorite),
-            label: 'Favorite',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: const Color.fromRGBO(117, 8, 23, 1),
-        unselectedItemColor: const Color(0xFF8C9B7E),
-        backgroundColor: appBarColor,
-        onTap: _onItemTapped,
-      ),
+      listOfChild: [
+        Homepage(),
+        CategoriesPage(),
+        FavoritesPage(),
+        ProfilePage(),
+        // FifthScreen(),
+      ],
+      listOfBottomNavigationItem: buildBottomNavigationItemList(),
     );
   }
+
+  List<BottomNavigationItem> buildBottomNavigationItemList() => [
+        BottomNavigationItem(
+          activeIcon: Icon(
+            Icons.dashboard,
+            color: const Color.fromRGBO(117, 8, 23, 1),
+            size: 30,
+          ),
+          inActiveIcon: Icon(
+            Icons.space_dashboard_outlined,
+            color: const Color(0xFF8C9B7E),
+            size: 23,
+          ),
+          // title: 'Dashboard',
+          color: Color(0xFFE8E8E8),
+          vSync: this,
+        ),
+        BottomNavigationItem(
+          activeIcon: Icon(
+            Icons.category,
+            color: const Color.fromRGBO(117, 8, 23, 1),
+            size: 30,
+          ),
+          inActiveIcon: Icon(
+            Icons.category_outlined,
+            color: const Color(0xFF8C9B7E),
+            size: 23,
+          ),
+          // title: '',
+          color: Color(0xFFE8E8E8),
+          vSync: this,
+        ),
+        BottomNavigationItem(
+          activeIcon: Icon(
+            Icons.favorite,
+            color: const Color.fromRGBO(117, 8, 23, 1),
+            size: 30,
+          ),
+          inActiveIcon: Icon(
+            Icons.favorite_border,
+            color: const Color(0xFF8C9B7E),
+            size: 23,
+          ),
+          // title: '',
+          color: Color(0xFFE8E8E8),
+          vSync: this,
+        ),
+        BottomNavigationItem(
+          activeIcon: Icon(
+            Icons.person_2,
+            color: const Color.fromRGBO(117, 8, 23, 1),
+            size: 30,
+          ),
+          inActiveIcon: Icon(
+            Icons.person_2_outlined,
+            color: const Color(0xFF8C9B7E),
+            size: 23,
+          ),
+          // title: '',
+          color: Color(0xFFE8E8E8),
+          vSync: this,
+        ),
+      ];
 }
+//flutter pub publish --dry-run
