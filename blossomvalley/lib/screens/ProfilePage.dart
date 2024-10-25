@@ -1,7 +1,6 @@
 import 'package:blossomvalley/screens/CategoriesPage.dart';
 import 'package:blossomvalley/screens/FavoritesPage.dart';
 import 'package:blossomvalley/screens/HomePage.dart';
-import 'package:blossomvalley/screens/LandingPage.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatefulWidget {
