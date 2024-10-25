@@ -5,10 +5,10 @@ class SignupPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false, // Removes the back arrow
-        backgroundColor: Color.fromARGB(255, 245, 255, 250),
-      ),
+      // appBar: AppBar(
+      //   automaticallyImplyLeading: false, // Removes the back arrow
+      //   backgroundColor: Color.fromARGB(255, 245, 255, 250),
+      // ),
       body: Container(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -148,8 +148,7 @@ class SignupPage extends StatelessWidget {
           ),
         ),
       ),
-      // backgroundColor: Color(0xFFE8E8E8), // #E8E8E8
-      backgroundColor: Color.fromARGB(255, 245, 255, 250),
+      backgroundColor: Colors.white,
     );
   }
 }

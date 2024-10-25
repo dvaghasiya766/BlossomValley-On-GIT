@@ -226,12 +226,14 @@ class _HomepageState extends State<Homepage> {
                           'Indoor Plant, 26° - 30°C, Water 25%',
                           'assets/images/Orchid Elegance.jpeg',
                           '250',
+                          true,
                         ),
                         _buildNewArrivals(
                           'Succulent Selectionnnnnnnnnn',
                           'Indoor Plant, 26° - 30°C, Water 25%',
                           'assets/images/leaves.jpeg',
                           '290',
+                          false,
                         ),
                       ],
                     ),
@@ -268,12 +270,14 @@ class _HomepageState extends State<Homepage> {
                               'Indoor Plant, 26° - 30°C, Water 25%',
                               'assets/images/Blossom Valley_Mug.jpeg',
                               '100',
+                              true,
                             ),
                             _buildNewArrivals(
                               'BV Cap',
                               'Indoor Plant, 26° - 30°C, Water 25%',
                               'assets/images/Blossom Valley_Cap.jpeg',
                               '20',
+                              false,
                             ),
                           ],
                         ),
@@ -286,12 +290,14 @@ class _HomepageState extends State<Homepage> {
                               // 'assets/images/Blossom Valley_T-shirt1.jpeg',
                               'assets/images/Blossom Valley_T-shirt2.jpeg',
                               '200',
+                              true,
                             ),
                             _buildNewArrivals(
                               'BV Water bottle',
                               'Indoor Plant, 26° - 30°C, Water 25%',
                               'assets/images/Blossom Valley_Water bottle.jpeg',
                               '20',
+                              false,
                             ),
                           ],
                         ),
@@ -309,11 +315,11 @@ class _HomepageState extends State<Homepage> {
     );
   }
 
-  Widget _buildNewArrivals(
-      String plantName, String plantDesc, String imgAddress, String ecoPoints) {
+  Widget _buildNewArrivals(String plantName, String plantDesc,
+      String imgAddress, String ecoPoints, bool isinbag) {
     double width = MediaQuery.of(context).size.width;
     // bool isLiked = true; // Initialize like state
-    bool isinbag = false; // Initialize
+    // bool isinbag = false; // Initialize
 
     return StatefulBuilder(
       builder: (BuildContext context, StateSetter setState) {

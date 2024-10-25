@@ -11,7 +11,7 @@ class LandingPage extends StatelessWidget {
         width: double.infinity,
         padding: EdgeInsets.all(16.0),
         decoration: BoxDecoration(
-          color: Color.fromARGB(255, 245, 255, 250), // Mint Cream
+          color: Colors.white, // Mint Cream
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
