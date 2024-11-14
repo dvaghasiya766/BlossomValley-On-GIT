@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "481153505959",
+    "project_id": "blossomvalley-9b49d",
+    "storage_bucket": "blossomvalley-9b49d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:481153505959:android:ea435684756f243f5a5982",
+        "android_client_info": {
+          "package_name": "com.example.blossomvalley"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwZk-3r2iNUzvT08WExtWIZKj2EWUa4N4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
